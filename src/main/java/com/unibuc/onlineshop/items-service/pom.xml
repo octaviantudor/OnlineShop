@@ -8,11 +8,10 @@
         <version>0.0.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>items-microservice</artifactId>
+    <artifactId>items-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>items-microservice</name>
-    <description>items-microservice</description>
-    <packaging>jar</packaging>
+    <name>items-service</name>
+    <description>items-service</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -34,15 +33,7 @@
             <version>3.1.2</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.8.2</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
-
-
 
     <build>
         <plugins>
