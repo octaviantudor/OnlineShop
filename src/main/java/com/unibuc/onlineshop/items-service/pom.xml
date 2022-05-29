@@ -8,12 +8,10 @@
         <version>0.0.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.unibuc</groupId>
-    <artifactId>orders-microservice</artifactId>
+    <artifactId>items-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>orders-service</name>
-    <description>orders-service</description>
-    <packaging>jar</packaging>
+    <name>items-service</name>
+    <description>items-service</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -33,6 +31,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>

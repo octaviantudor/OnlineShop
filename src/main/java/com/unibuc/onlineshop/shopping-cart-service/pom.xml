@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.unibuc</groupId>
-    <artifactId>orders-microservice</artifactId>
+    <artifactId>shopping-cart</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>orders-service</name>
-    <description>orders-service</description>
+    <name>shopping-cart</name>
+    <description>shopping-cart</description>
     <packaging>jar</packaging>
     <properties>
         <java.version>11</java.version>
