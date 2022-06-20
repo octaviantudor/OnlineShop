@@ -3,7 +3,7 @@ CREATE TABLE `categories` (
                               `name` varchar(100) DEFAULT NULL,
                               `description` varchar(100) DEFAULT NULL,
                               PRIMARY KEY (`id_categories`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `products` (
                             `id_products` bigint NOT NULL AUTO_INCREMENT,
@@ -14,4 +14,4 @@ CREATE TABLE `products` (
                             PRIMARY KEY (`id_products`),
                             KEY `id_categories` (`id_categories`),
                             CONSTRAINT `products_ibfk_1` FOREIGN KEY (`id_categories`) REFERENCES `categories` (`id_categories`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
