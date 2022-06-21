@@ -1,6 +1,13 @@
 server:
   port: 8083
 spring:
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      probability: 1
+    integration:
+      enabled: true
   application:
     name: shopping-cart-service
   cloud:
