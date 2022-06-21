@@ -4,6 +4,7 @@ package com.unibuc.gatewayservice.controller;
 import com.unibuc.gatewayservice.domain.shoppingcart.ShoppingCart;
 import com.unibuc.gatewayservice.domain.shoppingcart.ShoppingCartProduct;
 import com.unibuc.gatewayservice.service.ShoppingCartService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +27,7 @@ public class ShoppingCartController {
 
     }
 
+    @CircuitBreaker(name = "shoppingcart", fallbackMethod = "fallBackGetShoppingCart")
     @GetMapping("/{username}")
     public ShoppingCart getShoppingCart(
             @PathVariable(value = "username") String username){
@@ -34,10 +36,18 @@ public class ShoppingCartController {
 
     }
 
+    public ShoppingCart fallBackGetShoppingCart(String username, Exception e){
+        log.info("Fallback method for shopping cart reached!");
+        return ShoppingCart.builder()
+                .username("mocked username for shopping cart")
+                .checked(Boolean.FALSE)
+                .build();
+    }
+
     @GetMapping("/{username}/items")
-    public Set<ShoppingCartProduct> getShoppingCartItems(
+    public Set<ShoppingCartProduct> getOrderedItems(
             @PathVariable(value = "username") String username){
-        log.info("Get shopping cart for username: {} ", username);
+        log.info("Get ordered items for username: {} ", username);
         return shoppingCartService.getShoppingCartItems(username);
 
     }
